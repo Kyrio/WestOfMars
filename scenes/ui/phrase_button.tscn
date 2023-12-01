@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://53rstjs7j75c"]
+
+[ext_resource type="Theme" uid="uid://dlm2yp356lc0g" path="res://scenes/ui/base_theme.tres" id="1_d6muq"]
+[ext_resource type="Texture2D" uid="uid://hs0su7weleq0" path="res://assets/emoji/respect.png" id="1_m6sjj"]
+[ext_resource type="Script" path="res://scenes/ui/phrase_button.gd" id="3_xef12"]
+
+[node name="PhraseButton" type="Button"]
+custom_minimum_size = Vector2(688, 86)
+offset_right = 8.0
+offset_bottom = 86.0
+theme = ExtResource("1_d6muq")
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_constants/h_separation = 15
+theme_override_constants/icon_max_width = 48
+theme_override_font_sizes/font_size = 24
+text = "Heard he didn’t sleep a wink last night.
+Couldn’t find any sheep to count."
+icon = ExtResource("1_m6sjj")
+alignment = 0
+text_overrun_behavior = 3
+icon_alignment = 2
+expand_icon = true
+script = ExtResource("3_xef12")

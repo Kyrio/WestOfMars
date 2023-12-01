@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="DialogueBranch" load_steps=12 format=3 uid="uid://dmeeybqx4fga6"]
+
+[ext_resource type="Script" path="res://core/types/dialogue_line.gd" id="1_jwom6"]
+[ext_resource type="Script" path="res://core/types/dialogue_branch.gd" id="2_hs3vv"]
+
+[sub_resource type="Resource" id="Resource_2bdn1"]
+script = ExtResource("1_jwom6")
+character = 6
+emotion = 6
+emotion_about = -1
+text = "Of course you didn’t!"
+remember_as = -1
+reputation_modifier = 20
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_hs3vv")]([])
+
+[sub_resource type="Resource" id="Resource_dovrf"]
+script = ExtResource("2_hs3vv")
+selected_with = Array[int]([1])
+lines = Array[ExtResource("1_jwom6")]([SubResource("Resource_2bdn1")])
+
+[sub_resource type="Resource" id="Resource_fqfhp"]
+script = ExtResource("1_jwom6")
+character = 6
+emotion = 6
+emotion_about = -1
+text = "If only Sheriff thought the same!"
+remember_as = -1
+reputation_modifier = 20
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_hs3vv")]([])
+
+[sub_resource type="Resource" id="Resource_enlkf"]
+script = ExtResource("2_hs3vv")
+selected_with = Array[int]([6])
+lines = Array[ExtResource("1_jwom6")]([SubResource("Resource_fqfhp")])
+
+[sub_resource type="Resource" id="Resource_parur"]
+script = ExtResource("1_jwom6")
+character = 6
+emotion = 9
+emotion_about = -1
+text = "What the heck is wrong with you?!"
+remember_as = -1
+reputation_modifier = -20
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_hs3vv")]([])
+
+[sub_resource type="Resource" id="Resource_65jwy"]
+script = ExtResource("2_hs3vv")
+selected_with = Array[int]([4])
+lines = Array[ExtResource("1_jwom6")]([SubResource("Resource_parur")])
+
+[sub_resource type="Resource" id="Resource_35xub"]
+script = ExtResource("1_jwom6")
+character = 6
+emotion = 10
+emotion_about = -1
+text = "If you say so…"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_hs3vv")]([])
+
+[sub_resource type="Resource" id="Resource_eevtb"]
+script = ExtResource("2_hs3vv")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_jwom6")]([SubResource("Resource_35xub")])
+
+[sub_resource type="Resource" id="Resource_0jnie"]
+script = ExtResource("1_jwom6")
+character = 6
+emotion = 12
+emotion_about = -1
+text = "No one’s evil enough to do this!"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_hs3vv")]([SubResource("Resource_dovrf"), SubResource("Resource_enlkf"), SubResource("Resource_65jwy"), SubResource("Resource_eevtb")])
+
+[resource]
+script = ExtResource("2_hs3vv")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_jwom6")]([SubResource("Resource_0jnie")])

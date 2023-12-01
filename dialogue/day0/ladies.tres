@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="DialogueBranch" load_steps=6 format=3 uid="uid://cttfpkwg4bb7t"]
+
+[ext_resource type="Script" path="res://core/types/dialogue_line.gd" id="1_odfmq"]
+[ext_resource type="Script" path="res://core/types/dialogue_branch.gd" id="1_p0chh"]
+
+[sub_resource type="Resource" id="Resource_qj0mk"]
+script = ExtResource("1_odfmq")
+character = 2
+emotion = 13
+emotion_about = -1
+text = "Are we even safe anymore?"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("1_p0chh")]([])
+
+[sub_resource type="Resource" id="Resource_bsfhs"]
+script = ExtResource("1_odfmq")
+character = 7
+emotion = 1
+emotion_about = 10
+text = "We’ll be safer once Sheriff arrests this lowlife, Tuco!"
+remember_as = 5
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("1_p0chh")]([])
+
+[sub_resource type="Resource" id="Resource_dxnjf"]
+script = ExtResource("1_odfmq")
+character = 2
+emotion = 10
+emotion_about = -1
+text = "You may be right…"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("1_p0chh")]([])
+
+[resource]
+script = ExtResource("1_p0chh")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_odfmq")]([SubResource("Resource_qj0mk"), SubResource("Resource_bsfhs"), SubResource("Resource_dxnjf")])

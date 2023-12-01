@@ -1,0 +1,1285 @@
+[gd_scene load_steps=36 format=3 uid="uid://c0xmbs7b72n3v"]
+
+[ext_resource type="Texture2D" uid="uid://dr8u2fr28pag3" path="res://assets/portraits/Spencer.png" id="1_dx0hh"]
+[ext_resource type="Script" path="res://scenes/accusation/accusation.gd" id="1_jvong"]
+[ext_resource type="Theme" uid="uid://dlm2yp356lc0g" path="res://scenes/ui/base_theme.tres" id="1_mm4s3"]
+[ext_resource type="Texture2D" uid="uid://c24kp3f6f725n" path="res://assets/backgrounds/Map_BG.png" id="1_qi2bx"]
+[ext_resource type="Texture2D" uid="uid://ccwn8m43johwn" path="res://assets/buildings/CrashZone.png" id="2_fixnr"]
+[ext_resource type="Texture2D" uid="uid://cvhl2f4e36e7u" path="res://assets/buildings/Cattle.png" id="3_o62ej"]
+[ext_resource type="Texture2D" uid="uid://bxdbpttns5nbe" path="res://assets/buildings/CattleT.png" id="4_2neqg"]
+[ext_resource type="Texture2D" uid="uid://bedx30xddw60i" path="res://assets/buildings/Crops.png" id="5_xic6f"]
+[ext_resource type="Texture2D" uid="uid://vucsdalug5k3" path="res://assets/props/Cactus.png" id="6_c2kao"]
+[ext_resource type="Texture2D" uid="uid://rsn4fbhpg3a5" path="res://assets/buildings/Farm.png" id="7_f28rs"]
+[ext_resource type="Texture2D" uid="uid://squpqndc3lse" path="res://assets/buildings/FarmT.png" id="8_vsyw7"]
+[ext_resource type="Texture2D" uid="uid://b14oko737rjfy" path="res://assets/ui/Background-emote.png" id="10_pkvlk"]
+[ext_resource type="Texture2D" uid="uid://dq2r82mmh70u7" path="res://assets/emoji/suspicion.png" id="11_cr127"]
+[ext_resource type="Texture2D" uid="uid://bi1udpiolckcq" path="res://assets/emoji/drum.png" id="12_enmpo"]
+[ext_resource type="AudioStream" uid="uid://cndek6ps0qpe6" path="res://assets/audio/music/MUSC_accusation.wav.ogg" id="13_q2inq"]
+[ext_resource type="Texture2D" uid="uid://ct6wqpt57lcuw" path="res://assets/ui/scale/Balance1.png" id="14_16khh"]
+[ext_resource type="Texture2D" uid="uid://dumgeakqk5ktg" path="res://assets/emoji/no_suspects.png" id="14_aavgu"]
+[ext_resource type="Texture2D" uid="uid://c6n0qc6qcgxk8" path="res://assets/portraits/You.png" id="15_bjbak"]
+[ext_resource type="Texture2D" uid="uid://dek0qeucn3ok1" path="res://assets/ui/scale/Balance2.png" id="15_rgo6v"]
+[ext_resource type="Texture2D" uid="uid://du335xdu8mpai" path="res://assets/ui/scale/Balance3.png" id="16_8ie36"]
+[ext_resource type="Texture2D" uid="uid://c2sfq2fdu223" path="res://assets/ui/scale/Balance4.png" id="17_wug3a"]
+[ext_resource type="Texture2D" uid="uid://cammkyjmkcu0j" path="res://assets/ui/scale/Balance5.png" id="18_py3fy"]
+[ext_resource type="Texture2D" uid="uid://cqjat7frno3to" path="res://assets/ui/scale/Balance6.png" id="19_i6shi"]
+[ext_resource type="Texture2D" uid="uid://buh7kml7ix4wi" path="res://assets/ui/scale/Balance7.png" id="20_1kwg3"]
+[ext_resource type="AudioStream" uid="uid://b13hme2dpl8jy" path="res://assets/audio/music/MUSC_scaleWin_01.ogg" id="23_rbfu0"]
+[ext_resource type="AudioStream" uid="uid://d13otk2ocmi12" path="res://assets/audio/music/MUSC_scaleFail_01.ogg" id="24_rvq6o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_maxjp"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 125
+corner_radius_top_right = 125
+corner_radius_bottom_right = 125
+corner_radius_bottom_left = 125
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0tr1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_16khh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rgo6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8ie36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wug3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_py3fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_i6shi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_1kwg3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_671wk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Bubbles/Bubble:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Bubbles/Bubble2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Bubbles/Bubble3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Bubbles/Bubble4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Bubbles/Bubble:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Bubbles/Bubble2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Bubbles/Bubble3:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Bubbles/Bubble4:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/Bubbles/Bubble:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/Bubbles/Bubble2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/Bubbles/Bubble3:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/Bubbles/Bubble4:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/Results/SafeText:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/Results/WinText:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CanvasLayer/Results/LoseText:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("CanvasLayer/Results:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(535, -279)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("CanvasLayer/Bubbles/BubbleWin:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("CanvasLayer/Bubbles/BubbleLose:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("CanvasLayer/BackToMenu:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("CanvasLayer/NextDay:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("CanvasLayer/NewGamePlus:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath(".:modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("CanvasLayer/NPC:modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5m8yd"]
+resource_name = "accusation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Bubbles/Bubble:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Bubbles/Bubble2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Bubbles/Bubble3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Bubbles/Bubble4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Bubbles/Bubble:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 2.7, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(1, 1), Vector2(1.4, 1.4)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Bubbles/Bubble2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 0.7, 2.7, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(1, 1), Vector2(1.4, 1.4)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Bubbles/Bubble3:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.7, 0.9, 2.7, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(1, 1), Vector2(1.4, 1.4)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Bubbles/Bubble4:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.9, 1.1, 2.7, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(1, 1), Vector2(1.4, 1.4)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/Bubbles/Bubble:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.7, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/Bubbles/Bubble2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.7, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/Bubbles/Bubble3:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2.7, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/Bubbles/Bubble4:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(2.7, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mehqr"]
+resource_name = "lose"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Results/SafeText:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Results/WinText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Results/LoseText:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Results:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(535, -279), Vector2(535, 410)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Bubbles/BubbleWin:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Bubbles/BubbleLose:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/BackToMenu:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/NextDay:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/NewGamePlus:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5m8jr"]
+resource_name = "safe"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Results/SafeText:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Results/WinText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Results/LoseText:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Results:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(535, -279), Vector2(535, 410)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Bubbles/BubbleWin:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Bubbles/BubbleLose:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/BackToMenu:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/NextDay:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/NewGamePlus:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_dvd6s"]
+resource_name = "win"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Results/SafeText:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Results/WinText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Results/LoseText:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Results:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(535, -279), Vector2(535, 410)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Bubbles/BubbleWin:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Bubbles/BubbleLose:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/BackToMenu:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/NextDay:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/NewGamePlus:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_c3yc4"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/NPC:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_swte0"]
+_data = {
+"RESET": SubResource("Animation_671wk"),
+"accusation": SubResource("Animation_5m8yd"),
+"fade_in": SubResource("Animation_c3yc4"),
+"lose": SubResource("Animation_mehqr"),
+"safe": SubResource("Animation_5m8jr"),
+"win": SubResource("Animation_dvd6s")
+}
+
+[node name="Accusation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jvong")
+
+[node name="MapPart" type="Node2D" parent="."]
+modulate = Color(0.133333, 0.286275, 0.478431, 1)
+position = Vector2(-803, 1036)
+metadata/_edit_group_ = true
+
+[node name="Background" type="Sprite2D" parent="MapPart"]
+texture = ExtResource("1_qi2bx")
+
+[node name="CrashZone" type="Sprite2D" parent="MapPart"]
+position = Vector2(1320, -1620)
+texture = ExtResource("2_fixnr")
+centered = false
+
+[node name="Cattle" type="Sprite2D" parent="MapPart"]
+position = Vector2(1924, -480)
+texture = ExtResource("3_o62ej")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="MapPart/Cattle"]
+z_index = 10
+texture = ExtResource("4_2neqg")
+
+[node name="Crops" type="Sprite2D" parent="MapPart"]
+position = Vector2(1064, -1154)
+texture = ExtResource("5_xic6f")
+
+[node name="Cactus" type="Sprite2D" parent="MapPart"]
+position = Vector2(2701, -32)
+texture = ExtResource("6_c2kao")
+
+[node name="Farm" type="Sprite2D" parent="MapPart"]
+position = Vector2(569, -953)
+texture = ExtResource("7_f28rs")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="MapPart/Farm"]
+z_index = 10
+texture = ExtResource("8_vsyw7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="NPC" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -350.0
+offset_right = 175.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_dx0hh")
+
+[node name="Bubbles" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -419.0
+offset_right = 20.0
+offset_bottom = -379.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Bubble" type="TextureRect" parent="CanvasLayer/Bubbles"]
+visible = false
+layout_mode = 1
+offset_left = -300.0
+offset_top = -54.0
+offset_right = -114.0
+offset_bottom = 125.0
+pivot_offset = Vector2(93, 89)
+texture = ExtResource("10_pkvlk")
+flip_h = true
+
+[node name="Emotion" type="TextureRect" parent="CanvasLayer/Bubbles/Bubble"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.5
+offset_right = 36.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("11_cr127")
+expand_mode = 2
+
+[node name="Bubble2" type="TextureRect" parent="CanvasLayer/Bubbles"]
+visible = false
+layout_mode = 1
+offset_left = -172.0
+offset_top = -172.0
+offset_right = 14.0
+offset_bottom = 7.0
+rotation = 0.174533
+pivot_offset = Vector2(93, 89)
+texture = ExtResource("10_pkvlk")
+flip_h = true
+
+[node name="Emotion" type="TextureRect" parent="CanvasLayer/Bubbles/Bubble2"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.5
+offset_right = 36.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("12_enmpo")
+expand_mode = 2
+
+[node name="Bubble3" type="TextureRect" parent="CanvasLayer/Bubbles"]
+visible = false
+layout_mode = 1
+offset_left = 21.0
+offset_top = -170.0
+offset_right = 207.0
+offset_bottom = 9.0
+rotation = -0.174533
+pivot_offset = Vector2(93, 89)
+texture = ExtResource("10_pkvlk")
+
+[node name="Emotion" type="TextureRect" parent="CanvasLayer/Bubbles/Bubble3"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.5
+offset_right = 36.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("12_enmpo")
+expand_mode = 2
+
+[node name="Bubble4" type="TextureRect" parent="CanvasLayer/Bubbles"]
+visible = false
+layout_mode = 1
+offset_left = 142.0
+offset_top = -52.0
+offset_right = 328.0
+offset_bottom = 127.0
+pivot_offset = Vector2(93, 89)
+texture = ExtResource("10_pkvlk")
+
+[node name="Emotion" type="TextureRect" parent="CanvasLayer/Bubbles/Bubble4"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.5
+offset_right = 36.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("12_enmpo")
+expand_mode = 2
+
+[node name="BubbleWin" type="TextureRect" parent="CanvasLayer/Bubbles"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = 6.0
+offset_right = 280.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(93, 89)
+texture = ExtResource("10_pkvlk")
+
+[node name="Emotion" type="TextureRect" parent="CanvasLayer/Bubbles/BubbleWin"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.5
+offset_right = 36.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("14_aavgu")
+expand_mode = 2
+
+[node name="BubbleLose" type="TextureRect" parent="CanvasLayer/Bubbles"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = 6.0
+offset_right = 280.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(93, 89)
+texture = ExtResource("10_pkvlk")
+
+[node name="Emotion" type="TextureRect" parent="CanvasLayer/Bubbles/BubbleLose"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -55.5
+offset_right = 43.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("15_bjbak")
+expand_mode = 2
+
+[node name="Results" type="HBoxContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(850, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -819.0
+offset_right = 425.0
+offset_bottom = -559.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+metadata/_edit_group_ = true
+
+[node name="Circle" type="Panel" parent="CanvasLayer/Results"]
+custom_minimum_size = Vector2(260, 260)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_maxjp")
+metadata/_edit_group_ = true
+
+[node name="Scale" type="AnimatedSprite2D" parent="CanvasLayer/Results/Circle"]
+unique_name_in_owner = true
+position = Vector2(130, 123)
+sprite_frames = SubResource("SpriteFrames_d0tr1")
+frame = 3
+centered = false
+offset = Vector2(-121, -217)
+
+[node name="SafeText" type="VBoxContainer" parent="CanvasLayer/Results"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="CanvasLayer/Results/SafeText"]
+layout_mode = 2
+theme = ExtResource("1_mm4s3")
+theme_override_font_sizes/font_size = 64
+text = "You're safe!"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Results/SafeText"]
+layout_mode = 2
+theme = ExtResource("1_mm4s3")
+theme_override_font_sizes/font_size = 32
+text = "For now, but tomorrow's another day..."
+
+[node name="WinText" type="VBoxContainer" parent="CanvasLayer/Results"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="CanvasLayer/Results/WinText"]
+layout_mode = 2
+theme = ExtResource("1_mm4s3")
+theme_override_font_sizes/font_size = 64
+text = "Victory!"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Results/WinText"]
+layout_mode = 2
+theme = ExtResource("1_mm4s3")
+theme_override_font_sizes/font_size = 32
+text = "You've managed to escape blame."
+
+[node name="LoseText" type="VBoxContainer" parent="CanvasLayer/Results"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="CanvasLayer/Results/LoseText"]
+layout_mode = 2
+theme = ExtResource("1_mm4s3")
+theme_override_font_sizes/font_size = 64
+text = "Oh no..."
+
+[node name="Label2" type="Label" parent="CanvasLayer/Results/LoseText"]
+layout_mode = 2
+theme = ExtResource("1_mm4s3")
+theme_override_font_sizes/font_size = 32
+text = "The sheriff named you as the criminal."
+
+[node name="BackToMenu" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(234, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -363.0
+offset_top = -133.0
+offset_right = -137.0
+offset_bottom = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_neighbor_top = NodePath("../NewGamePlus")
+theme = ExtResource("1_mm4s3")
+text = "Back to Menu"
+
+[node name="NextDay" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -363.0
+offset_top = -133.0
+offset_right = -137.0
+offset_bottom = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_mm4s3")
+text = "Next Day >"
+
+[node name="NewGamePlus" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -371.0
+offset_top = -213.0
+offset_right = -137.0
+offset_bottom = -149.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_neighbor_bottom = NodePath("../BackToMenu")
+theme = ExtResource("1_mm4s3")
+text = "New Game +?"
+
+[node name="MusicAccusation" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_q2inq")
+
+[node name="MusicWin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_rbfu0")
+
+[node name="MusicLose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_rvq6o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_swte0")
+}
+
+[connection signal="pressed" from="CanvasLayer/BackToMenu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/NextDay" to="." method="_on_next_day_pressed"]
+[connection signal="pressed" from="CanvasLayer/NewGamePlus" to="." method="_on_new_game_plus_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

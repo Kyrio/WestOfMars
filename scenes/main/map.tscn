@@ -1,0 +1,390 @@
+[gd_scene load_steps=44 format=3 uid="uid://0hvytvx8d1mk"]
+
+[ext_resource type="Texture2D" uid="uid://c24kp3f6f725n" path="res://assets/backgrounds/Map_BG.png" id="2_ntlki"]
+[ext_resource type="Texture2D" uid="uid://ccwn8m43johwn" path="res://assets/buildings/CrashZone.png" id="3_4iiey"]
+[ext_resource type="Texture2D" uid="uid://bedx30xddw60i" path="res://assets/buildings/Crops.png" id="4_ymn67"]
+[ext_resource type="Texture2D" uid="uid://d0mr6j6qdf7ak" path="res://assets/buildings/Bank.png" id="17_lpppy"]
+[ext_resource type="Texture2D" uid="uid://d0ckqhht7jnh0" path="res://assets/buildings/BankT.png" id="18_xf28s"]
+[ext_resource type="Texture2D" uid="uid://rsn4fbhpg3a5" path="res://assets/buildings/Farm.png" id="19_8ttel"]
+[ext_resource type="Texture2D" uid="uid://squpqndc3lse" path="res://assets/buildings/FarmT.png" id="20_n0boy"]
+[ext_resource type="Texture2D" uid="uid://cvhl2f4e36e7u" path="res://assets/buildings/Cattle.png" id="21_jrdvl"]
+[ext_resource type="Texture2D" uid="uid://bxdbpttns5nbe" path="res://assets/buildings/CattleT.png" id="22_62ll2"]
+[ext_resource type="Texture2D" uid="uid://b2wj1tbh81qad" path="res://assets/buildings/Police.png" id="23_pfn5q"]
+[ext_resource type="Texture2D" uid="uid://c4lsjouw5p6ql" path="res://assets/buildings/PoliceT.png" id="24_774v3"]
+[ext_resource type="Texture2D" uid="uid://coh3iq6daorug" path="res://assets/buildings/House1.png" id="25_s5er1"]
+[ext_resource type="Texture2D" uid="uid://cacfkrluwyhaa" path="res://assets/buildings/House1T.png" id="26_mafx5"]
+[ext_resource type="Texture2D" uid="uid://cliyhsh5nuj5e" path="res://assets/buildings/House2.png" id="27_t31tn"]
+[ext_resource type="Texture2D" uid="uid://cqkvks86h7oxq" path="res://assets/buildings/House2T.png" id="28_8q68d"]
+[ext_resource type="Texture2D" uid="uid://b2assl1vog14x" path="res://assets/buildings/House3.png" id="29_12w15"]
+[ext_resource type="Texture2D" uid="uid://c6m8v1b1eyfvl" path="res://assets/buildings/House3T.png" id="30_0kkub"]
+[ext_resource type="Texture2D" uid="uid://cepgglafsogy5" path="res://assets/buildings/House4.png" id="31_uk0di"]
+[ext_resource type="Texture2D" uid="uid://bobs3hkalgx0x" path="res://assets/buildings/House4T.png" id="32_1tep4"]
+[ext_resource type="Texture2D" uid="uid://bv0srcrax2wpy" path="res://assets/buildings/House5.png" id="33_u25qg"]
+[ext_resource type="Texture2D" uid="uid://dg8e4j6vwsgf7" path="res://assets/buildings/House5T.png" id="34_wkcrp"]
+[ext_resource type="Texture2D" uid="uid://buise2xjbonux" path="res://assets/buildings/Saloon.png" id="35_v5xnv"]
+[ext_resource type="Texture2D" uid="uid://bokdxiw3wbi5i" path="res://assets/characters/_0002_Sheep.png" id="36_0bd2g"]
+[ext_resource type="Texture2D" uid="uid://dift8r170l4is" path="res://assets/buildings/SaloonT.png" id="36_d6bc1"]
+[ext_resource type="Texture2D" uid="uid://0hfowjeovxnj" path="res://assets/buildings/Shop.png" id="37_4at3m"]
+[ext_resource type="Texture2D" uid="uid://cpt8kiq4nwekg" path="res://assets/characters/_0001_Dog.png" id="37_ox5wl"]
+[ext_resource type="Texture2D" uid="uid://detk716qa5chh" path="res://assets/characters/_0000_Horse.png" id="38_7s2rp"]
+[ext_resource type="Texture2D" uid="uid://b8q3f12w6hlgu" path="res://assets/buildings/ShopT.png" id="38_fa00b"]
+[ext_resource type="Texture2D" uid="uid://dfsdljykmnxie" path="res://assets/props/Tumbleweed.png" id="39_wqfgc"]
+[ext_resource type="Script" path="res://scenes/main/tumbleweed.gd" id="40_lbl8e"]
+[ext_resource type="Texture2D" uid="uid://6srikawmqvm6" path="res://assets/buildings/Church.png" id="41_mwt6l"]
+[ext_resource type="Texture2D" uid="uid://cmiog6jvaiqs2" path="res://assets/buildings/ChurchT.png" id="42_jlddd"]
+[ext_resource type="Texture2D" uid="uid://dge18m8hgsl04" path="res://assets/buildings/Graveyard_Row2.png" id="43_ab2i7"]
+[ext_resource type="Texture2D" uid="uid://jpxxk17g4bp5" path="res://assets/buildings/Graveyard_Row1.png" id="44_hsjys"]
+[ext_resource type="Texture2D" uid="uid://vucsdalug5k3" path="res://assets/props/Cactus.png" id="45_efeqw"]
+[ext_resource type="Texture2D" uid="uid://bd872mbhox4vo" path="res://assets/props/Rocks.png" id="46_gx4w0"]
+[ext_resource type="Texture2D" uid="uid://bee6ruoe3p23a" path="res://assets/props/Tree.png" id="47_akgta"]
+[ext_resource type="Texture2D" uid="uid://bn5qt4ovb6qam" path="res://assets/props/TreeStump.png" id="48_6hg46"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yae5q"]
+a = Vector2(-2860, -1600)
+b = Vector2(2860, -1600)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mtvr3"]
+a = Vector2(2860, -1600)
+b = Vector2(2860, 1600)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xyptb"]
+a = Vector2(-2860, 1600)
+b = Vector2(2860, 1600)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_l7nb0"]
+a = Vector2(-2860, -1600)
+b = Vector2(-2860, 1600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00alf"]
+size = Vector2(86, 20)
+
+[node name="Map" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_ntlki")
+metadata/_edit_lock_ = true
+
+[node name="CrashZone" type="Sprite2D" parent="."]
+position = Vector2(1320, -1620)
+texture = ExtResource("3_4iiey")
+centered = false
+
+[node name="Crops" type="Sprite2D" parent="."]
+position = Vector2(1064, -1154)
+texture = ExtResource("4_ymn67")
+
+[node name="Bank" type="Sprite2D" parent="."]
+position = Vector2(-425, -642)
+texture = ExtResource("17_lpppy")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="Bank"]
+z_index = 10
+texture = ExtResource("18_xf28s")
+
+[node name="Farm" type="Sprite2D" parent="."]
+position = Vector2(569, -953)
+texture = ExtResource("19_8ttel")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="Farm"]
+z_index = 10
+texture = ExtResource("20_n0boy")
+
+[node name="Cattle" type="Sprite2D" parent="."]
+position = Vector2(1924, -480)
+texture = ExtResource("21_jrdvl")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="Cattle"]
+z_index = 10
+texture = ExtResource("22_62ll2")
+
+[node name="Police" type="Sprite2D" parent="."]
+position = Vector2(23, 505)
+texture = ExtResource("23_pfn5q")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="Police"]
+z_index = 10
+texture = ExtResource("24_774v3")
+
+[node name="House1" type="Sprite2D" parent="."]
+position = Vector2(1216, 726)
+texture = ExtResource("25_s5er1")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="House1"]
+z_index = 10
+texture = ExtResource("26_mafx5")
+
+[node name="House2" type="Sprite2D" parent="."]
+position = Vector2(1692, 587)
+texture = ExtResource("27_t31tn")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="House2"]
+z_index = 10
+texture = ExtResource("28_8q68d")
+
+[node name="House3" type="Sprite2D" parent="."]
+position = Vector2(2291, 1054)
+texture = ExtResource("29_12w15")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="House3"]
+z_index = 10
+texture = ExtResource("30_0kkub")
+
+[node name="House4" type="Sprite2D" parent="."]
+position = Vector2(-2367, -1150)
+texture = ExtResource("31_uk0di")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="House4"]
+z_index = 10
+texture = ExtResource("32_1tep4")
+
+[node name="House5" type="Sprite2D" parent="."]
+position = Vector2(-1589, -1293)
+texture = ExtResource("33_u25qg")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="House5"]
+z_index = 10
+texture = ExtResource("34_wkcrp")
+
+[node name="Saloon" type="Sprite2D" parent="."]
+position = Vector2(-1200, -420)
+texture = ExtResource("35_v5xnv")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="Saloon"]
+z_index = 10
+texture = ExtResource("36_d6bc1")
+
+[node name="Shop" type="Sprite2D" parent="."]
+position = Vector2(-1924, -300)
+texture = ExtResource("37_4at3m")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="Shop"]
+z_index = 10
+texture = ExtResource("38_fa00b")
+
+[node name="Tumbleweed" type="Sprite2D" parent="."]
+position = Vector2(-2986, 144)
+texture = ExtResource("39_wqfgc")
+centered = false
+offset = Vector2(-106, -116)
+script = ExtResource("40_lbl8e")
+start_after = 24.0
+
+[node name="Tumbleweed2" type="Sprite2D" parent="."]
+position = Vector2(2986, 920)
+texture = ExtResource("39_wqfgc")
+centered = false
+offset = Vector2(-106, -116)
+script = ExtResource("40_lbl8e")
+direction = Vector2(-1, 0)
+start_after = 18.0
+
+[node name="Tumbleweed3" type="Sprite2D" parent="."]
+position = Vector2(2986, -669)
+texture = ExtResource("39_wqfgc")
+centered = false
+offset = Vector2(-106, -116)
+script = ExtResource("40_lbl8e")
+direction = Vector2(-1, 0)
+start_after = 12.0
+
+[node name="Church" type="Sprite2D" parent="."]
+position = Vector2(-2109, 539)
+texture = ExtResource("41_mwt6l")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="Church"]
+z_index = 10
+texture = ExtResource("42_jlddd")
+
+[node name="GraveyardBackRow" type="Sprite2D" parent="."]
+position = Vector2(-1628, 1076)
+texture = ExtResource("43_ab2i7")
+
+[node name="GraveyardFrontRow" type="Sprite2D" parent="."]
+position = Vector2(-1183.8, 1369)
+texture = ExtResource("44_hsjys")
+
+[node name="Vegetation" type="Node2D" parent="."]
+
+[node name="Cactus" type="Sprite2D" parent="Vegetation"]
+position = Vector2(2701, -32)
+texture = ExtResource("45_efeqw")
+
+[node name="Rocks" type="Sprite2D" parent="Vegetation"]
+position = Vector2(-2781.86, -875)
+texture = ExtResource("46_gx4w0")
+
+[node name="Rocks2" type="Sprite2D" parent="Vegetation"]
+position = Vector2(2045, 1323)
+texture = ExtResource("46_gx4w0")
+
+[node name="Tree" type="Sprite2D" parent="Vegetation"]
+position = Vector2(1842, -1147)
+texture = ExtResource("47_akgta")
+
+[node name="TreeStump" type="Sprite2D" parent="Vegetation"]
+position = Vector2(-1051, -1088)
+texture = ExtResource("48_6hg46")
+
+[node name="Bounds" type="StaticBody2D" parent="."]
+
+[node name="North" type="CollisionShape2D" parent="Bounds"]
+shape = SubResource("SegmentShape2D_yae5q")
+
+[node name="East" type="CollisionShape2D" parent="Bounds"]
+shape = SubResource("SegmentShape2D_mtvr3")
+
+[node name="South" type="CollisionShape2D" parent="Bounds"]
+shape = SubResource("SegmentShape2D_xyptb")
+
+[node name="West" type="CollisionShape2D" parent="Bounds"]
+shape = SubResource("SegmentShape2D_l7nb0")
+
+[node name="BuildingCollisions" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="BankCollision" type="CollisionPolygon2D" parent="BuildingCollisions"]
+position = Vector2(-428, -644)
+polygon = PackedVector2Array(-212, 35, -215, 261, -161, 261, -155, 304, 158, 302, 178, 264, 207, 263, 226, 31)
+
+[node name="FarmCollision" type="CollisionPolygon2D" parent="BuildingCollisions"]
+polygon = PackedVector2Array(186, -935, 201, -700, 384, -660, 911, -675, 923, -931)
+
+[node name="CattleCollision" type="CollisionPolygon2D" parent="BuildingCollisions"]
+polygon = PackedVector2Array(2885, -110, 2796, -173, 2528, -219, 2226, -118, 1729, -120, 1379, -226, 1233, -272, 1038, -455, 1318, -610, 1696, -640, 1869, -763, 1754, -883, 2072, -974, 1339, -1142, 2002, -1358, 1545, -1645, 2914, -1660)
+
+[node name="PoliceCollision" type="CollisionPolygon2D" parent="BuildingCollisions"]
+polygon = PackedVector2Array(535, 543, 531, 775, 29, 795, 1, 819, -429, 823, -444, 795, -483, 794, -486, 537)
+
+[node name="HouseCollision1" type="CollisionPolygon2D" parent="BuildingCollisions"]
+position = Vector2(1216, 726)
+polygon = PackedVector2Array(265, -18, 263, 212, -256, 212, -264, -18)
+
+[node name="HouseCollision2" type="CollisionPolygon2D" parent="BuildingCollisions"]
+position = Vector2(1216, 726)
+polygon = PackedVector2Array(311, -139, 624, -139, 633, 83, 588, 83, 567, 96, 550, 84, 377, 84, 356, 100, 342, 85, 316, 84)
+
+[node name="HouseCollision3" type="CollisionPolygon2D" parent="BuildingCollisions"]
+position = Vector2(1216, 726)
+polygon = PackedVector2Array(829, 312, 841, 586, 1298, 598, 1326, 309)
+
+[node name="HouseCollision4" type="CollisionPolygon2D" parent="BuildingCollisions"]
+polygon = PackedVector2Array(-2613, -1142, -2614, -900, -2135, -901, -2123, -1142)
+
+[node name="HouseCollision5" type="CollisionPolygon2D" parent="BuildingCollisions"]
+polygon = PackedVector2Array(-1788, -1328, -1774, -1086, -1404, -1092, -1395, -1328)
+
+[node name="SaloonCollision" type="CollisionPolygon2D" parent="BuildingCollisions"]
+polygon = PackedVector2Array(-1538, -376, -856, -389, -815, -298, -829, -287, -836, 9, -861, -25, -990, -25, -1021, 7, -1039, -27, -1382, -31, -1399, 8, -1417, -32, -1514, -31, -1568, 16, -1678, 0, -1771, 37, -1873, 8, -1980, 13, -1982, 49, -2103, 53, -2123, 24, -2233, 30, -2246, -251, -2270, -252, -2219, -366, -1639, -365, -1593, -294)
+
+[node name="ChurchCollision" type="CollisionPolygon2D" parent="BuildingCollisions"]
+polygon = PackedVector2Array(-2525, 805, -1692, 807, -1733, 1119, -2505, 1102)
+
+[node name="GraveCollisions" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="Grave1" type="CollisionPolygon2D" parent="GraveCollisions"]
+polygon = PackedVector2Array(-2220, 1063, -2078, 1041, -2017, 1056, -2025, 1191, -2214, 1202)
+
+[node name="Grave2" type="CollisionPolygon2D" parent="GraveCollisions"]
+polygon = PackedVector2Array(-1905, 1042, -1891, 1165, -1807, 1163, -1797, 1056)
+
+[node name="Grave3" type="CollisionPolygon2D" parent="GraveCollisions"]
+polygon = PackedVector2Array(-1632, 1005, -1629, 1107, -1439, 1114, -1428, 1028, -1531, 992)
+
+[node name="Grave4" type="CollisionPolygon2D" parent="GraveCollisions"]
+polygon = PackedVector2Array(-1284, 1001, -1259, 1125, -1245, 1133, -1196, 1129, -1186, 982)
+
+[node name="Grave5" type="CollisionPolygon2D" parent="GraveCollisions"]
+polygon = PackedVector2Array(-1141, 958, -1089, 939, -1011, 951, -1020, 1108, -1093, 1111, -1123, 1093)
+
+[node name="Grave6" type="CollisionPolygon2D" parent="GraveCollisions"]
+position = Vector2(123.2, 61)
+polygon = PackedVector2Array(-2032, 1273, -1888, 1258, -1908, 1380, -1986, 1385, -1997, 1377)
+
+[node name="Grave7" type="CollisionPolygon2D" parent="GraveCollisions"]
+position = Vector2(123.2, 61)
+polygon = PackedVector2Array(-1745, 1307, -1669, 1293, -1615, 1313, -1636, 1467, -1736, 1464)
+
+[node name="Grave8" type="CollisionPolygon2D" parent="GraveCollisions"]
+position = Vector2(123.2, 61)
+polygon = PackedVector2Array(-1566, 1278, -1513, 1196, -1469, 1232, -1478, 1382, -1550, 1399)
+
+[node name="Grave9" type="CollisionPolygon2D" parent="GraveCollisions"]
+position = Vector2(123.2, 61)
+polygon = PackedVector2Array(-1211, 1303, -1214, 1416, -1114, 1423, -1112, 1314)
+
+[node name="Grave10" type="CollisionPolygon2D" parent="GraveCollisions"]
+position = Vector2(123.2, 61)
+polygon = PackedVector2Array(-982, 1217, -964, 1385, -888, 1388, -875, 1381, -840, 1237)
+
+[node name="Grave11" type="CollisionPolygon2D" parent="GraveCollisions"]
+position = Vector2(123.2, 61)
+polygon = PackedVector2Array(-696, 1160, -684, 1275, -674, 1283, -601, 1281, -590, 1175)
+
+[node name="VegetationCollision" type="StaticBody2D" parent="."]
+
+[node name="CactusCollision" type="CollisionPolygon2D" parent="VegetationCollision"]
+position = Vector2(2701, -32)
+polygon = PackedVector2Array(36.8, -127.7, 46.3, -126.3, 45.7, -117, 44.4, -117, 38.3, -73.7, 41.4, -83, 47.2, -83, 48.3, -82.4, 64.4, -106, 73.1, -106, 72.1, -58.3, 75, -59.6, 77, -55, 80.4, -52.7, 56, -6, 53.2, -6, 26, 6.3, 26, 9.39999, 5.3, 144, -17.7, 144, -22.8, 46.5, -50, 30.9, -50, 26.8, -66.1, -38.4, -78.8, -58.8, -75.9, -64, -71.4, -64, -69, -63.4, -61.6, -86, -56, -86, -33, -76.3, -33, -73.2, -24.6, -55.5, -22, -57, -22, -82.3, -16.4, -125, -12, -125, 18, -136.5, 22, -142.6, 22, -146.3, 30.5, -147.6)
+
+[node name="RockCollision1" type="CollisionPolygon2D" parent="VegetationCollision"]
+position = Vector2(-2781.86, -875)
+polygon = PackedVector2Array(-30, -60, 16, -10, 23.8, 40, 17.1, 40, -118, 39.5, -140, 23.5, -140, 17.5, -80, -71.5)
+
+[node name="RockCollision2" type="CollisionPolygon2D" parent="VegetationCollision"]
+position = Vector2(-2781.86, -875)
+polygon = PackedVector2Array(122, 33, 128, 57, 50, 59, 47.7, 33, 70, 8)
+
+[node name="RockCollision3" type="CollisionPolygon2D" parent="VegetationCollision"]
+position = Vector2(2047, 1322)
+polygon = PackedVector2Array(-30, -60, 16, -10, 23.8, 40, 17.1, 40, -118, 39.5, -140, 23.5, -140, 17.5, -80, -71.5)
+
+[node name="RockCollision4" type="CollisionPolygon2D" parent="VegetationCollision"]
+position = Vector2(2046, 1324)
+polygon = PackedVector2Array(122, 33, 128, 57, 50, 59, 47.7, 33, 70, 8)
+
+[node name="TreeCollision" type="CollisionPolygon2D" parent="VegetationCollision"]
+position = Vector2(1842, -1147)
+polygon = PackedVector2Array(-3, 80, 25, 146, 65, 177, 21, 165, -53, 189, -40, 165, -82, 164, -35, 146, -29, 135, -29, 87)
+
+[node name="TreeStumpCollision" type="CollisionPolygon2D" parent="VegetationCollision"]
+position = Vector2(1842, -1147)
+polygon = PackedVector2Array(-2961, 16, -2968, 73, -3008, 117, -2970, 112, -2960, 121, -2905, 122, -2898, 114, -2854, 115, -2810, 126, -2808, 104, -2779, 100, -2813, 25, -2864, -11, -2909, -8)
+
+[node name="Sheep" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(1419, -556)
+texture = ExtResource("36_0bd2g")
+
+[node name="Dog" type="StaticBody2D" parent="."]
+position = Vector2(1121, 935)
+
+[node name="DogSprite" type="Sprite2D" parent="Dog"]
+texture = ExtResource("37_ox5wl")
+
+[node name="DogShape" type="CollisionShape2D" parent="Dog"]
+position = Vector2(-3, 26)
+shape = SubResource("RectangleShape2D_00alf")
+
+[node name="Horse" type="CharacterBody2D" parent="."]
+position = Vector2(-161, -1431)
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Horse"]
+texture = ExtResource("38_7s2rp")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Horse"]
+visible = false
+polygon = PackedVector2Array(-61.5841, -106.665, -46.557, -101.747, -27.3, -53, 62.5, -43, 101.769, -42.5571, 148.195, 35.1902, 111.37, 67.392, 87.3541, 64.5233, 79.9, 115, 59.5, 115, 50.4, 90, 28.1, 102.8, 16.5, 86, -19, 103, -28.5, 118, -52.5, 118, -48, 100, -64.4, 118, -81.2, 118, -81.5, 109.7, -77.8, 53.1, -103.6, -54.1, -145.5, -61.5, -145.5, -81.3, -112.3, -101.7, -111.5, -113.7, -95.6656, -121.479, -80.9, -113.7, -66.6606, -120.637)

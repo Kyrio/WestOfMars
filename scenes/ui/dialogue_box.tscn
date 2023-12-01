@@ -1,0 +1,422 @@
+[gd_scene load_steps=26 format=3 uid="uid://t27bwfu174hd"]
+
+[ext_resource type="Theme" uid="uid://dlm2yp356lc0g" path="res://scenes/ui/base_theme.tres" id="1_eqi2h"]
+[ext_resource type="Script" path="res://scenes/ui/dialogue_box.gd" id="1_ye5h6"]
+[ext_resource type="Texture2D" uid="uid://bvt6mwak6g1lm" path="res://assets/portraits/Averell.png" id="2_2xihj"]
+[ext_resource type="Texture2D" uid="uid://crlpey8hvwwma" path="res://assets/portraits/Bass.png" id="3_jii6p"]
+[ext_resource type="Texture2D" uid="uid://cm76xlls6h340" path="res://assets/portraits/Clint.png" id="3_ocfk5"]
+[ext_resource type="Texture2D" uid="uid://dfk8fm43ntvgi" path="res://assets/portraits/Claudia.png" id="4_2k36t"]
+[ext_resource type="Texture2D" uid="uid://c6n0qc6qcgxk8" path="res://assets/portraits/You.png" id="4_eolg4"]
+[ext_resource type="Texture2D" uid="uid://cb3o162bxv5ga" path="res://assets/portraits/Hill.png" id="6_olgf2"]
+[ext_resource type="Texture2D" uid="uid://64yptb5kuqnq" path="res://assets/portraits/Leanne.png" id="7_m1s5i"]
+[ext_resource type="Texture2D" uid="uid://n3k78spokc24" path="res://assets/portraits/Luke.png" id="8_ydfuu"]
+[ext_resource type="Texture2D" uid="uid://bg5c7pnfxcgny" path="res://assets/portraits/Mei.png" id="9_yhdql"]
+[ext_resource type="Texture2D" uid="uid://dr8u2fr28pag3" path="res://assets/portraits/Spencer.png" id="10_sdb13"]
+[ext_resource type="Texture2D" uid="uid://b7r2suuoaqb4j" path="res://assets/portraits/Toshiro.png" id="11_crq5h"]
+[ext_resource type="Texture2D" uid="uid://btf75e35jjoqn" path="res://assets/portraits/Tuco.png" id="12_5hi5r"]
+[ext_resource type="Texture2D" uid="uid://b14oko737rjfy" path="res://assets/ui/Background-emote.png" id="15_hfmys"]
+[ext_resource type="Texture2D" uid="uid://dkw1sw2onoi8r" path="res://assets/ui/Button-Next.png" id="15_qv3ky"]
+[ext_resource type="Texture2D" uid="uid://hs0su7weleq0" path="res://assets/emoji/respect.png" id="16_7wd6q"]
+
+[sub_resource type="Animation" id="Animation_3gia7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EmotionBubble:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AboutBubble:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5nio8"]
+resource_name = "emotion_about_pop"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EmotionBubble:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EmotionBubble:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AboutBubble:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AboutBubble:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ak4yo"]
+resource_name = "emotion_pop"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EmotionBubble:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EmotionBubble:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j3ljv"]
+_data = {
+"RESET": SubResource("Animation_3gia7"),
+"emotion_about_pop": SubResource("Animation_5nio8"),
+"emotion_pop": SubResource("Animation_ak4yo")
+}
+
+[sub_resource type="Animation" id="Animation_8nf7q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dialogue/NPC:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(30, -350)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dialogue/NextButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dialogue/NextButton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(525, 160)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Dialogue/NPC:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_r7n0c"]
+resource_name = "arrow"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dialogue/NextButton:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dialogue/NextButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(525, 160), Vector2(535, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_g2b7i"]
+resource_name = "npc_slide"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dialogue/NPC:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(30, -350), Vector2(0, -350)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dialogue/NPC:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hcmvg"]
+_data = {
+"RESET": SubResource("Animation_8nf7q"),
+"arrow": SubResource("Animation_r7n0c"),
+"npc_slide": SubResource("Animation_g2b7i")
+}
+
+[node name="DialogueBox" type="Control" node_paths=PackedStringArray("npc_portrait", "text_label", "answer_panel", "next_button", "emotion_bubble", "about_bubble", "emotion_rect", "about_character_rect", "choose_answer_button")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ye5h6")
+portraits = Array[CompressedTexture2D]([ExtResource("2_2xihj"), ExtResource("3_jii6p"), ExtResource("4_2k36t"), ExtResource("3_ocfk5"), ExtResource("6_olgf2"), ExtResource("7_m1s5i"), ExtResource("8_ydfuu"), ExtResource("9_yhdql"), ExtResource("10_sdb13"), ExtResource("11_crq5h"), ExtResource("12_5hi5r"), ExtResource("4_eolg4")])
+npc_portrait = NodePath("Dialogue/NPC")
+text_label = NodePath("Dialogue/Margins/Text")
+answer_panel = NodePath("Answer")
+next_button = NodePath("Dialogue/NextButton")
+emotion_bubble = NodePath("EmotionBubble")
+about_bubble = NodePath("AboutBubble")
+emotion_rect = NodePath("EmotionBubble/Emotion")
+about_character_rect = NodePath("AboutBubble/AboutCharacter")
+choose_answer_button = NodePath("Answer/ChooseAnswer")
+
+[node name="Dialogue" type="Panel" parent="."]
+custom_minimum_size = Vector2(600, 220)
+layout_mode = 2
+offset_right = 500.0
+offset_bottom = 100.0
+theme = ExtResource("1_eqi2h")
+
+[node name="Margins" type="MarginContainer" parent="Dialogue"]
+layout_mode = 2
+offset_right = 600.0
+offset_bottom = 220.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Text" type="Label" parent="Dialogue/Margins"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/line_spacing = 5
+text = "This damn sheriff is crazy enough to burn that field himself, right stranger? "
+autowrap_mode = 2
+visible_characters_behavior = 1
+
+[node name="NPC" type="TextureRect" parent="Dialogue"]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 1
+offset_left = 30.0
+offset_top = -350.0
+offset_right = 380.0
+texture = ExtResource("10_sdb13")
+
+[node name="NextButton" type="TextureButton" parent="Dialogue"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = 160.0
+offset_right = 579.0
+offset_bottom = 205.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+texture_normal = ExtResource("15_qv3ky")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Answer" type="Panel" parent="."]
+custom_minimum_size = Vector2(418, 220)
+layout_mode = 2
+offset_left = 620.0
+offset_right = 1120.0
+offset_bottom = 220.0
+theme = ExtResource("1_eqi2h")
+
+[node name="Hero" type="TextureRect" parent="Answer"]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -350.0
+offset_top = -350.0
+grow_horizontal = 0
+texture = ExtResource("4_eolg4")
+
+[node name="ChooseAnswer" type="Button" parent="Answer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.5
+offset_top = -32.0
+offset_right = 166.5
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Choose your answer..."
+
+[node name="EmotionBubble" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 292.0
+offset_top = -342.0
+offset_right = 478.0
+offset_bottom = -163.0
+pivot_offset = Vector2(0, 179)
+texture = ExtResource("15_hfmys")
+
+[node name="Emotion" type="TextureRect" parent="EmotionBubble"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.5
+offset_right = 36.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("16_7wd6q")
+expand_mode = 2
+
+[node name="AboutBubble" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 226.0
+offset_top = -430.0
+offset_right = 412.0
+offset_bottom = -251.0
+rotation = -0.174533
+pivot_offset = Vector2(0, 179)
+texture = ExtResource("15_hfmys")
+
+[node name="AboutCharacter" type="TextureRect" parent="AboutBubble"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -61.5
+offset_right = 45.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("12_5hi5r")
+expand_mode = 3
+
+[node name="BubbleAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j3ljv")
+}
+
+[node name="NPCAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hcmvg")
+}
+
+[node name="ArrowAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hcmvg")
+}
+
+[connection signal="pressed" from="Dialogue/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Answer/ChooseAnswer" to="." method="_on_choose_answer_pressed"]

@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="DialogueBranch" load_steps=7 format=3 uid="uid://b5wgp57nyrjey"]
+
+[ext_resource type="Script" path="res://core/types/dialogue_line.gd" id="1_kxfu7"]
+[ext_resource type="Script" path="res://core/types/dialogue_branch.gd" id="1_y8l6s"]
+
+[sub_resource type="Resource" id="Resource_1qd63"]
+script = ExtResource("1_kxfu7")
+character = 0
+emotion = 2
+emotion_about = 6
+text = "Dreadful business, what happened to Luke."
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("1_y8l6s")]([])
+
+[sub_resource type="Resource" id="Resource_3irmm"]
+script = ExtResource("1_kxfu7")
+character = 3
+emotion = 6
+emotion_about = -1
+text = "Dreadful."
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("1_y8l6s")]([])
+
+[sub_resource type="Resource" id="Resource_npac6"]
+script = ExtResource("1_kxfu7")
+character = 1
+emotion = 0
+emotion_about = -1
+text = "Heard he didn’t sleep a wink last night. Couldn’t find any sheep to count."
+remember_as = 4
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("1_y8l6s")]([])
+
+[sub_resource type="Resource" id="Resource_dhnff"]
+script = ExtResource("1_kxfu7")
+character = -1
+emotion = 0
+emotion_about = -1
+text = "..."
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = true
+answer_branches = Array[ExtResource("1_y8l6s")]([])
+
+[resource]
+script = ExtResource("1_y8l6s")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_kxfu7")]([SubResource("Resource_1qd63"), SubResource("Resource_3irmm"), SubResource("Resource_npac6"), SubResource("Resource_dhnff")])

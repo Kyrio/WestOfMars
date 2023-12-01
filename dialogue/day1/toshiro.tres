@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="DialogueBranch" load_steps=8 format=3 uid="uid://romxa40n4ibp"]
+
+[ext_resource type="Script" path="res://core/types/dialogue_line.gd" id="1_vxwqp"]
+[ext_resource type="Script" path="res://core/types/dialogue_branch.gd" id="2_t0bly"]
+
+[sub_resource type="Resource" id="Resource_4dbat"]
+script = ExtResource("1_vxwqp")
+character = 9
+emotion = 11
+emotion_about = -1
+text = "Well said."
+remember_as = -1
+reputation_modifier = 20
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_t0bly")]([])
+
+[sub_resource type="Resource" id="Resource_c7mp0"]
+script = ExtResource("2_t0bly")
+selected_with = Array[int]([0])
+lines = Array[ExtResource("1_vxwqp")]([SubResource("Resource_4dbat")])
+
+[sub_resource type="Resource" id="Resource_68dhi"]
+script = ExtResource("1_vxwqp")
+character = 9
+emotion = 0
+emotion_about = -1
+text = "..."
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_t0bly")]([])
+
+[sub_resource type="Resource" id="Resource_jj5au"]
+script = ExtResource("2_t0bly")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_vxwqp")]([SubResource("Resource_68dhi")])
+
+[sub_resource type="Resource" id="Resource_s1id4"]
+script = ExtResource("1_vxwqp")
+character = 9
+emotion = 0
+emotion_about = -1
+text = "Have you come to pay your respects?"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_t0bly")]([SubResource("Resource_c7mp0"), SubResource("Resource_jj5au")])
+
+[resource]
+script = ExtResource("2_t0bly")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_vxwqp")]([SubResource("Resource_s1id4")])

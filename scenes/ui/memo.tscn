@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnyuqui8st585"]
+
+[ext_resource type="Script" path="res://scenes/ui/memo.gd" id="1_i123x"]
+[ext_resource type="Theme" uid="uid://dlm2yp356lc0g" path="res://scenes/ui/base_theme.tres" id="1_m8f1n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvvh8"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 0.823529)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ha7yi"]
+content_margin_right = 20.0
+
+[node name="Memo" type="Panel" node_paths=PackedStringArray("title_label", "phrase_list", "close_button")]
+custom_minimum_size = Vector2(750, 420)
+offset_right = 750.0
+offset_bottom = 420.0
+theme = ExtResource("1_m8f1n")
+theme_override_styles/panel = SubResource("StyleBoxFlat_mvvh8")
+script = ExtResource("1_i123x")
+title_label = NodePath("Header/Title")
+phrase_list = NodePath("Scroll/Phrases")
+close_button = NodePath("Close")
+
+[node name="Header" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mvvh8")
+metadata/_edit_group_ = true
+
+[node name="Title" type="Label" parent="Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Memorized Phrases"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 89.0
+offset_right = -21.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ha7yi")
+follow_focus = true
+
+[node name="Phrases" type="VBoxContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -61.5
+offset_top = 15.0
+offset_right = 61.5
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Close"
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

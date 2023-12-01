@@ -1,0 +1,118 @@
+[gd_resource type="Resource" script_class="DialogueBranch" load_steps=15 format=3 uid="uid://dl3ip34wimbyc"]
+
+[ext_resource type="Script" path="res://core/types/dialogue_line.gd" id="1_e1hgy"]
+[ext_resource type="Script" path="res://core/types/dialogue_branch.gd" id="2_vgy8x"]
+
+[sub_resource type="Resource" id="Resource_1qd63"]
+script = ExtResource("1_e1hgy")
+character = 10
+emotion = 9
+emotion_about = 3
+text = "This again, Clint?"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_vgy8x")]([])
+
+[sub_resource type="Resource" id="Resource_coxdd"]
+script = ExtResource("1_e1hgy")
+character = 10
+emotion = 7
+emotion_about = -1
+text = "For God’s sake…"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_vgy8x")]([])
+
+[sub_resource type="Resource" id="Resource_qfebp"]
+script = ExtResource("2_vgy8x")
+selected_with = Array[int]([6])
+lines = Array[ExtResource("1_e1hgy")]([SubResource("Resource_coxdd")])
+
+[sub_resource type="Resource" id="Resource_2chcl"]
+script = ExtResource("1_e1hgy")
+character = 10
+emotion = 11
+emotion_about = 11
+text = "New guy’s not an idiot."
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_vgy8x")]([])
+
+[sub_resource type="Resource" id="Resource_er075"]
+script = ExtResource("1_e1hgy")
+character = 0
+emotion = 6
+emotion_about = -1
+text = "He’s right… Leanne’s a good kid."
+remember_as = -1
+reputation_modifier = 20
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_vgy8x")]([])
+
+[sub_resource type="Resource" id="Resource_y4xrq"]
+script = ExtResource("2_vgy8x")
+selected_with = Array[int]([3])
+lines = Array[ExtResource("1_e1hgy")]([SubResource("Resource_2chcl"), SubResource("Resource_er075")])
+
+[sub_resource type="Resource" id="Resource_nc4nq"]
+script = ExtResource("1_e1hgy")
+character = -1
+emotion = 0
+emotion_about = -1
+text = "............................
+............................"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = true
+answer_branches = Array[ExtResource("2_vgy8x")]([])
+
+[sub_resource type="Resource" id="Resource_bbotm"]
+script = ExtResource("1_e1hgy")
+character = 1
+emotion = 10
+emotion_about = -1
+text = "Don’t change the subject."
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_vgy8x")]([])
+
+[sub_resource type="Resource" id="Resource_jbura"]
+script = ExtResource("2_vgy8x")
+selected_with = Array[int]([4])
+lines = Array[ExtResource("1_e1hgy")]([SubResource("Resource_nc4nq"), SubResource("Resource_bbotm")])
+
+[sub_resource type="Resource" id="Resource_6jyrn"]
+script = ExtResource("1_e1hgy")
+character = 3
+emotion = 1
+emotion_about = 11
+text = "You’re an odd one, kid."
+remember_as = -1
+reputation_modifier = -20
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_vgy8x")]([])
+
+[sub_resource type="Resource" id="Resource_hpddv"]
+script = ExtResource("2_vgy8x")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_e1hgy")]([SubResource("Resource_6jyrn")])
+
+[sub_resource type="Resource" id="Resource_3irmm"]
+script = ExtResource("1_e1hgy")
+character = 3
+emotion = 1
+emotion_about = 5
+text = "I’m telling you, that lass’s always up to no good. Right, new guy?"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_vgy8x")]([SubResource("Resource_qfebp"), SubResource("Resource_y4xrq"), SubResource("Resource_jbura"), SubResource("Resource_hpddv")])
+
+[resource]
+script = ExtResource("2_vgy8x")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_e1hgy")]([SubResource("Resource_1qd63"), SubResource("Resource_3irmm")])

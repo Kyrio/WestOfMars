@@ -1,0 +1,38 @@
+[gd_scene load_steps=12 format=3 uid="uid://dw8ormj825tqq"]
+
+[ext_resource type="Script" path="res://core/managers/scenes/scenes.gd" id="1_3p6u3"]
+[ext_resource type="PackedScene" uid="uid://b6cvmq3i84nxt" path="res://scenes/title/title.tscn" id="2_b31ql"]
+[ext_resource type="PackedScene" uid="uid://bpyxb1i8rr5ne" path="res://scenes/credits/credits.tscn" id="3_ija8m"]
+[ext_resource type="PackedScene" uid="uid://dck2q668c4amo" path="res://scenes/main/main.tscn" id="4_7eejh"]
+[ext_resource type="AudioStream" uid="uid://boombdbcdfsv2" path="res://assets/audio/sfx/AMB_layerConstant_loop01.ogg" id="5_8u54d"]
+[ext_resource type="AudioStream" uid="uid://cayu18tp01ngc" path="res://assets/audio/music/MUSC_title.ogg" id="5_cmalv"]
+[ext_resource type="PackedScene" uid="uid://c0xmbs7b72n3v" path="res://scenes/accusation/accusation.tscn" id="5_nw2bc"]
+[ext_resource type="AudioStream" uid="uid://mflp8u374551" path="res://assets/audio/sfx/AMB_layerDay_loop01.ogg" id="6_2nbhu"]
+[ext_resource type="AudioStream" uid="uid://b64jequxixhfo" path="res://assets/audio/sfx/AMB_layerNight_loop01.ogg" id="7_ub8n2"]
+[ext_resource type="AudioStream" uid="uid://bnkx2sa4a8uq0" path="res://assets/audio/music/MUSC_gameplay.ogg" id="8_bv8xw"]
+[ext_resource type="AudioStream" uid="uid://dl2c4kl381hye" path="res://assets/audio/music/MUSC_endDay.wav.ogg" id="9_yhre4"]
+
+[node name="Scenes" type="Node"]
+script = ExtResource("1_3p6u3")
+title_scene = ExtResource("2_b31ql")
+credits_scene = ExtResource("3_ija8m")
+main_scene = ExtResource("4_7eejh")
+accusation_scene = ExtResource("5_nw2bc")
+
+[node name="AmbienceBase" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8u54d")
+
+[node name="AmbienceDay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2nbhu")
+
+[node name="AmbienceNight" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ub8n2")
+
+[node name="MusicTitle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_cmalv")
+
+[node name="MusicGameplay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_bv8xw")
+
+[node name="MusicEndDay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_yhre4")

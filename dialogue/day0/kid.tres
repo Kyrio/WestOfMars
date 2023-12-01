@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="DialogueBranch" load_steps=5 format=3 uid="uid://bkjbui8aktgb"]
+
+[ext_resource type="Script" path="res://core/types/dialogue_line.gd" id="1_0rouu"]
+[ext_resource type="Script" path="res://core/types/dialogue_branch.gd" id="2_kd86t"]
+
+[sub_resource type="Resource" id="Resource_0jnie"]
+script = ExtResource("1_0rouu")
+character = 5
+emotion = 4
+emotion_about = -1
+text = "If they ask you anything, just say:"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_kd86t")]([])
+
+[sub_resource type="Resource" id="Resource_3kb00"]
+script = ExtResource("1_0rouu")
+character = 5
+emotion = 2
+emotion_about = 6
+text = "“Poor Luke loved his lambs”"
+remember_as = 2
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_kd86t")]([])
+
+[resource]
+script = ExtResource("2_kd86t")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_0rouu")]([SubResource("Resource_0jnie"), SubResource("Resource_3kb00")])

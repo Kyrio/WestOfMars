@@ -1,0 +1,91 @@
+[gd_resource type="Resource" script_class="DialogueBranch" load_steps=12 format=3 uid="uid://d10etio4dji71"]
+
+[ext_resource type="Script" path="res://core/types/dialogue_line.gd" id="1_b8ysf"]
+[ext_resource type="Script" path="res://core/types/dialogue_branch.gd" id="2_ovghl"]
+
+[sub_resource type="Resource" id="Resource_1qd63"]
+script = ExtResource("1_b8ysf")
+character = 3
+emotion = 1
+emotion_about = 9
+text = "How about that silent knight? We don’t know him."
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_ovghl")]([])
+
+[sub_resource type="Resource" id="Resource_3irmm"]
+script = ExtResource("1_b8ysf")
+character = 0
+emotion = 11
+emotion_about = 9
+text = "Are you crazy, Clint? The man commands respect."
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_ovghl")]([])
+
+[sub_resource type="Resource" id="Resource_a1jt4"]
+script = ExtResource("1_b8ysf")
+character = 1
+emotion = 6
+emotion_about = -1
+text = "I’ll drink to that."
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_ovghl")]([])
+
+[sub_resource type="Resource" id="Resource_m8xvy"]
+script = ExtResource("2_ovghl")
+selected_with = Array[int]([1, 2])
+lines = Array[ExtResource("1_b8ysf")]([SubResource("Resource_a1jt4")])
+
+[sub_resource type="Resource" id="Resource_03q6d"]
+script = ExtResource("1_b8ysf")
+character = -1
+emotion = 0
+emotion_about = -1
+text = "............................
+............................"
+remember_as = -1
+reputation_modifier = 20
+saloon_laugh_at_end = true
+answer_branches = Array[ExtResource("2_ovghl")]([])
+
+[sub_resource type="Resource" id="Resource_70lkn"]
+script = ExtResource("2_ovghl")
+selected_with = Array[int]([4])
+lines = Array[ExtResource("1_b8ysf")]([SubResource("Resource_03q6d")])
+
+[sub_resource type="Resource" id="Resource_dj5yg"]
+script = ExtResource("1_b8ysf")
+character = 1
+emotion = 10
+emotion_about = -1
+text = "Better be more articulate when you talk to the sheriff."
+remember_as = -1
+reputation_modifier = -20
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_ovghl")]([])
+
+[sub_resource type="Resource" id="Resource_otbfu"]
+script = ExtResource("2_ovghl")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_b8ysf")]([SubResource("Resource_dj5yg")])
+
+[sub_resource type="Resource" id="Resource_npac6"]
+script = ExtResource("1_b8ysf")
+character = 1
+emotion = 1
+emotion_about = 11
+text = "And the young man over there, what does he have to say for himself?"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_ovghl")]([SubResource("Resource_m8xvy"), SubResource("Resource_70lkn"), SubResource("Resource_otbfu")])
+
+[resource]
+script = ExtResource("2_ovghl")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_b8ysf")]([SubResource("Resource_1qd63"), SubResource("Resource_3irmm"), SubResource("Resource_npac6")])

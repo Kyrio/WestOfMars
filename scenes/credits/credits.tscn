@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpyxb1i8rr5ne"]
+
+[ext_resource type="Theme" uid="uid://dlm2yp356lc0g" path="res://scenes/ui/base_theme.tres" id="1_7op2v"]
+[ext_resource type="Script" path="res://scenes/credits/credits.gd" id="1_ebbpl"]
+[ext_resource type="Texture2D" uid="uid://bslju3y7c45cu" path="res://assets/backgrounds/Home-Background.png" id="3_v67vl"]
+
+[node name="Credits" type="Control" node_paths=PackedStringArray("back_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7op2v")
+script = ExtResource("1_ebbpl")
+back_button = NodePath("GoBack")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_v67vl")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Credits" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(900, 510)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -329.0
+offset_right = 450.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "[center]Made in November 2023 for GitHub Game Off
+
+Art & UI Design
+[b]Lucile Linguet[/b]
+
+Music & Sound
+[b]Noah Maruyama[/b]
+
+Writing & Programming
+[b]Timothée Pallot[/b]
+
+License and attribution notices are available on the code repository
+https://github.com/Kyrio/WestOfMars
+
+Thank you for playing![/center]"
+fit_content = true
+
+[node name="GoBack" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -113.0
+offset_top = -225.0
+offset_right = 113.0
+offset_bottom = -161.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "Back to Menu"
+
+[connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]

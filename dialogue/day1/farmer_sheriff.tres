@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="DialogueBranch" load_steps=5 format=3 uid="uid://dsibul1gjlb2p"]
+
+[ext_resource type="Script" path="res://core/types/dialogue_line.gd" id="1_pi5vu"]
+[ext_resource type="Script" path="res://core/types/dialogue_branch.gd" id="2_0574h"]
+
+[sub_resource type="Resource" id="Resource_0jnie"]
+script = ExtResource("1_pi5vu")
+character = 6
+emotion = 12
+emotion_about = -1
+text = "I don’t think anyone in town did this, Sheriff."
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_0574h")]([])
+
+[sub_resource type="Resource" id="Resource_3kb00"]
+script = ExtResource("1_pi5vu")
+character = 8
+emotion = 1
+emotion_about = 6
+text = "Hmm..."
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_0574h")]([])
+
+[resource]
+script = ExtResource("2_0574h")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_pi5vu")]([SubResource("Resource_0jnie"), SubResource("Resource_3kb00")])

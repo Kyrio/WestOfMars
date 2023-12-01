@@ -1,0 +1,74 @@
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://dlm2yp356lc0g"]
+
+[ext_resource type="FontFile" uid="uid://rq4m3ttan2so" path="res://assets/fonts/Pangolin-Regular.ttf" id="1_vfxg2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wnra"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0.27451)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p16eh"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0.627451)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yp6mw"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0.352941)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oo7gy"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0.627451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyk14"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0.745098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nkq5"]
+bg_color = Color(0, 0, 0, 0.54902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ge4j"]
+bg_color = Color(1, 1, 1, 0.509804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dovbb"]
+bg_color = Color(1, 1, 1, 0.831373)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h10d"]
+bg_color = Color(1, 1, 1, 0.705882)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss2hk"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(1, 1, 1, 0.12549)
+
+[resource]
+default_font = ExtResource("1_vfxg2")
+default_font_size = 32
+Button/styles/disabled = SubResource("StyleBoxFlat_7wnra")
+Button/styles/focus = SubResource("StyleBoxFlat_p16eh")
+Button/styles/hover = SubResource("StyleBoxFlat_yp6mw")
+Button/styles/normal = SubResource("StyleBoxFlat_oo7gy")
+Button/styles/pressed = SubResource("StyleBoxFlat_xyk14")
+Panel/styles/panel = SubResource("StyleBoxFlat_4nkq5")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_7ge4j")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_dovbb")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_3h10d")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_ss2hk")

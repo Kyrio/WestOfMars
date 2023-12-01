@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="DialogueBranch" load_steps=5 format=3 uid="uid://clba8lcifurnr"]
+
+[ext_resource type="Script" path="res://core/types/dialogue_line.gd" id="1_8mm8s"]
+[ext_resource type="Script" path="res://core/types/dialogue_branch.gd" id="2_uang1"]
+
+[sub_resource type="Resource" id="Resource_0jnie"]
+script = ExtResource("1_8mm8s")
+character = 5
+emotion = 4
+emotion_about = -1
+text = "It’s always safe to agree with people. Just say:"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_uang1")]([])
+
+[sub_resource type="Resource" id="Resource_3kb00"]
+script = ExtResource("1_8mm8s")
+character = 5
+emotion = 6
+emotion_about = -1
+text = "“Ain’t that the truth.”"
+remember_as = 6
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_uang1")]([])
+
+[resource]
+script = ExtResource("2_uang1")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_8mm8s")]([SubResource("Resource_0jnie"), SubResource("Resource_3kb00")])

@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="DialogueBranch" load_steps=10 format=3 uid="uid://cov84i6n0mr30"]
+
+[ext_resource type="Script" path="res://core/types/dialogue_line.gd" id="1_npyfb"]
+[ext_resource type="Script" path="res://core/types/dialogue_branch.gd" id="2_7n07w"]
+
+[sub_resource type="Resource" id="Resource_0ho5v"]
+script = ExtResource("1_npyfb")
+character = 10
+emotion = 5
+emotion_about = 11
+text = "#$@*&!"
+remember_as = -1
+reputation_modifier = -20
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_7n07w")]([])
+
+[sub_resource type="Resource" id="Resource_8wdxt"]
+script = ExtResource("2_7n07w")
+selected_with = Array[int]([5])
+lines = Array[ExtResource("1_npyfb")]([SubResource("Resource_0ho5v")])
+
+[sub_resource type="Resource" id="Resource_r41al"]
+script = ExtResource("1_npyfb")
+character = 10
+emotion = 11
+emotion_about = -1
+text = "You’re the only one in this town with any smarts."
+remember_as = -1
+reputation_modifier = 20
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_7n07w")]([])
+
+[sub_resource type="Resource" id="Resource_s82aq"]
+script = ExtResource("2_7n07w")
+selected_with = Array[int]([6])
+lines = Array[ExtResource("1_npyfb")]([SubResource("Resource_r41al")])
+
+[sub_resource type="Resource" id="Resource_avo0f"]
+script = ExtResource("1_npyfb")
+character = 10
+emotion = 9
+emotion_about = -1
+text = "Town’s full of fools…"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_7n07w")]([])
+
+[sub_resource type="Resource" id="Resource_3ggce"]
+script = ExtResource("2_7n07w")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_npyfb")]([SubResource("Resource_avo0f")])
+
+[sub_resource type="Resource" id="Resource_id77c"]
+script = ExtResource("1_npyfb")
+character = 10
+emotion = 5
+emotion_about = 8
+text = "This damn sheriff is crazy enough to burn that field himself, right stranger?"
+remember_as = -1
+reputation_modifier = 0
+saloon_laugh_at_end = false
+answer_branches = Array[ExtResource("2_7n07w")]([SubResource("Resource_8wdxt"), SubResource("Resource_s82aq"), SubResource("Resource_3ggce")])
+
+[resource]
+script = ExtResource("2_7n07w")
+selected_with = Array[int]([])
+lines = Array[ExtResource("1_npyfb")]([SubResource("Resource_id77c")])

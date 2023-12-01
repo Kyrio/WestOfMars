@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://7jr1ffsa0v61"]
+
+[ext_resource type="Script" path="res://core/managers/game/game.gd" id="1_ldbxl"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_ldbxl")
+
+[node name="DayTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]

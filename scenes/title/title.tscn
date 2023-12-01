@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6cvmq3i84nxt"]
+
+[ext_resource type="Theme" uid="uid://dlm2yp356lc0g" path="res://scenes/ui/base_theme.tres" id="1_dkbgp"]
+[ext_resource type="Script" path="res://scenes/title/title.gd" id="1_k5vmy"]
+[ext_resource type="Texture2D" uid="uid://bslju3y7c45cu" path="res://assets/backgrounds/Home-Background.png" id="3_8g2cn"]
+[ext_resource type="Texture2D" uid="uid://cuqpiy3jcfgup" path="res://assets/backgrounds/Logo.png" id="4_hhyar"]
+
+[node name="Title" type="Control" node_paths=PackedStringArray("play_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dkbgp")
+script = ExtResource("1_k5vmy")
+play_button = NodePath("Menu/Play")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8g2cn")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -237.0
+offset_right = 270.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_hhyar")
+stretch_mode = 3
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = 168.0
+offset_right = 110.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Play" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(220, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Play"
+
+[node name="Credits" type="Button" parent="Menu"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+text = "Credits"
+
+[connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/Credits" to="." method="_on_credits_pressed"]

@@ -1,0 +1,272 @@
+[gd_scene load_steps=37 format=3 uid="uid://d4c5xg4f2clto"]
+
+[ext_resource type="Texture2D" uid="uid://bjvqmnw8nsyem" path="res://assets/ui/Background-TopLeftMenu.png" id="1_5msn7"]
+[ext_resource type="Theme" uid="uid://dlm2yp356lc0g" path="res://scenes/ui/base_theme.tres" id="1_gt1ur"]
+[ext_resource type="Script" path="res://scenes/ui/hud.gd" id="2_cfml0"]
+[ext_resource type="Texture2D" uid="uid://dq2r82mmh70u7" path="res://assets/emoji/suspicion.png" id="3_a2si7"]
+[ext_resource type="Texture2D" uid="uid://ct6wqpt57lcuw" path="res://assets/ui/scale/Balance1.png" id="3_q3m6x"]
+[ext_resource type="Texture2D" uid="uid://inthekgmqt2m" path="res://assets/emoji/sadness.png" id="4_8opdl"]
+[ext_resource type="Texture2D" uid="uid://dek0qeucn3ok1" path="res://assets/ui/scale/Balance2.png" id="4_u48hx"]
+[ext_resource type="Texture2D" uid="uid://du335xdu8mpai" path="res://assets/ui/scale/Balance3.png" id="5_alu80"]
+[ext_resource type="Texture2D" uid="uid://cnuysslfirpll" path="res://assets/emoji/innocence.png" id="5_bm6si"]
+[ext_resource type="Texture2D" uid="uid://c2sfq2fdu223" path="res://assets/ui/scale/Balance4.png" id="6_rcctu"]
+[ext_resource type="Texture2D" uid="uid://bvidqtamkuw2y" path="res://assets/emoji/clue.png" id="6_wdt6v"]
+[ext_resource type="Texture2D" uid="uid://cop6y322s8ut6" path="res://assets/emoji/insults.png" id="7_48jvo"]
+[ext_resource type="Texture2D" uid="uid://cammkyjmkcu0j" path="res://assets/ui/scale/Balance5.png" id="7_64iya"]
+[ext_resource type="Texture2D" uid="uid://bumk27cj7opp6" path="res://assets/emoji/agreement.png" id="8_i47he"]
+[ext_resource type="Texture2D" uid="uid://cqjat7frno3to" path="res://assets/ui/scale/Balance6.png" id="8_mablf"]
+[ext_resource type="Texture2D" uid="uid://buh7kml7ix4wi" path="res://assets/ui/scale/Balance7.png" id="9_7qosr"]
+[ext_resource type="Texture2D" uid="uid://cwlpwbn1wqlxk" path="res://assets/emoji/disagreement.png" id="9_r680s"]
+[ext_resource type="Texture2D" uid="uid://dfxi4a8sh3bpx" path="res://assets/ui/Cursor.png" id="10_e63k6"]
+[ext_resource type="Texture2D" uid="uid://dd8k2qo5qtr0p" path="res://assets/emoji/laughter.png" id="10_sbpok"]
+[ext_resource type="Texture2D" uid="uid://di7hgdrfrpg5l" path="res://assets/emoji/anger.png" id="11_1st6d"]
+[ext_resource type="Texture2D" uid="uid://bkgybgafy1huo" path="res://assets/ui/Button-Talk.png" id="11_lx3i0"]
+[ext_resource type="Texture2D" uid="uid://bmavu1lkaiadh" path="res://assets/emoji/doubt.png" id="12_74bv7"]
+[ext_resource type="Script" path="res://scenes/ui/talk_button.gd" id="13_p0ok5"]
+[ext_resource type="Texture2D" uid="uid://dnh54odhnhjmo" path="res://assets/ui/Button-Talk-disabled.png" id="13_pgxqj"]
+[ext_resource type="Texture2D" uid="uid://dumgeakqk5ktg" path="res://assets/emoji/no_suspects.png" id="14_civxo"]
+[ext_resource type="Texture2D" uid="uid://c7pv086fgwpjb" path="res://assets/emoji/fear.png" id="15_lwc3u"]
+[ext_resource type="PackedScene" uid="uid://t27bwfu174hd" path="res://scenes/ui/dialogue_box.tscn" id="15_vvh8i"]
+[ext_resource type="Texture2D" uid="uid://b7owi8hbb22pr" path="res://assets/ui/check.png" id="18_8fftp"]
+[ext_resource type="Texture2D" uid="uid://hs0su7weleq0" path="res://assets/emoji/respect.png" id="18_pvvll"]
+[ext_resource type="PackedScene" uid="uid://bnyuqui8st585" path="res://scenes/ui/memo.tscn" id="28_08ndc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t1tq5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q3m6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u48hx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_alu80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rcctu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_64iya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mablf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7qosr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bpjqa"]
+
+[sub_resource type="Animation" id="Animation_6ocr3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scale:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scale:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_m4q2g"]
+resource_name = "scale_bonus"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scale:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.85, 0.85), Vector2(1.17, 1.17), Vector2(0.85, 0.85), Vector2(1.17, 1.17), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_u6okt"]
+resource_name = "scale_penalty"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scale:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0872665, -0.418879, 0.0872665, -0.418879, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ee84j"]
+_data = {
+"RESET": SubResource("Animation_6ocr3"),
+"scale_bonus": SubResource("Animation_m4q2g"),
+"scale_penalty": SubResource("Animation_u6okt")
+}
+
+[node name="HUD" type="Control" node_paths=PackedStringArray("day_label", "day_slider", "scale_sprite", "memo", "dialogue_box", "talk_button", "talk_check")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gt1ur")
+script = ExtResource("2_cfml0")
+day_label = NodePath("Day")
+day_slider = NodePath("DaySlider")
+scale_sprite = NodePath("Scale")
+memo = NodePath("Memo")
+dialogue_box = NodePath("DialogueBox")
+talk_button = NodePath("Talk")
+talk_check = NodePath("Talk/Check")
+emotion_icons = Array[CompressedTexture2D]([null, ExtResource("3_a2si7"), ExtResource("4_8opdl"), ExtResource("5_bm6si"), ExtResource("6_wdt6v"), ExtResource("7_48jvo"), ExtResource("8_i47he"), ExtResource("9_r680s"), ExtResource("10_sbpok"), ExtResource("11_1st6d"), ExtResource("12_74bv7"), ExtResource("18_pvvll"), ExtResource("14_civxo"), ExtResource("15_lwc3u")])
+metadata/_edit_lock_ = true
+
+[node name="DayPanel" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 254.0
+offset_bottom = 492.0
+texture = ExtResource("1_5msn7")
+
+[node name="Scale" type="AnimatedSprite2D" parent="."]
+position = Vector2(121, 310)
+sprite_frames = SubResource("SpriteFrames_t1tq5")
+frame = 3
+centered = false
+offset = Vector2(-121, -217)
+
+[node name="Day" type="Label" parent="."]
+custom_minimum_size = Vector2(247, 77)
+layout_mode = 1
+offset_right = 247.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 38
+text = "Day N"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reputation" type="Label" parent="."]
+custom_minimum_size = Vector2(247, 65)
+layout_mode = 1
+offset_top = 421.0
+offset_right = 247.0
+offset_bottom = 486.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 38
+text = "Reputation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DaySlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 105.0
+offset_right = 205.0
+offset_bottom = 131.0
+focus_mode = 0
+theme_override_icons/grabber = ExtResource("10_e63k6")
+theme_override_icons/grabber_highlight = ExtResource("10_e63k6")
+theme_override_icons/grabber_disabled = ExtResource("10_e63k6")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_bpjqa")
+editable = false
+
+[node name="Talk" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -216.0
+offset_right = -60.0
+offset_bottom = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+texture_normal = ExtResource("11_lx3i0")
+texture_disabled = ExtResource("13_pgxqj")
+script = ExtResource("13_p0ok5")
+
+[node name="Check" type="TextureRect" parent="Talk"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -81.0
+offset_top = -122.0
+offset_right = -57.0
+offset_bottom = -98.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("18_8fftp")
+
+[node name="DialogueBox" parent="." instance=ExtResource("15_vvh8i")]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 420.0
+offset_top = -252.0
+offset_right = 1020.0
+offset_bottom = -32.0
+grow_vertical = 0
+
+[node name="Memo" parent="." instance=ExtResource("28_08ndc")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -251.0
+offset_right = 375.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScaleAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ee84j")
+}
+
+[connection signal="pressed" from="Talk" to="." method="_on_talk_pressed"]
+[connection signal="finished_typing" from="DialogueBox" to="." method="_on_dialogue_box_finished_typing"]
+[connection signal="finished_typing" from="DialogueBox" to="Talk" method="_on_dialogue_box_finished_typing"]
+[connection signal="next_pressed" from="DialogueBox" to="." method="_on_dialogue_box_next_pressed"]
+[connection signal="opened_answers" from="DialogueBox" to="." method="_on_dialogue_box_opened_answers"]
+[connection signal="started_typing" from="DialogueBox" to="Talk" method="_on_dialogue_box_started_typing"]
+[connection signal="clicked_phrase" from="Memo" to="." method="_on_memo_clicked_phrase"]
+[connection signal="dismissed" from="Memo" to="." method="_on_memo_dismissed"]
+[connection signal="dismissed" from="Memo" to="DialogueBox" method="_on_memo_dismissed"]
